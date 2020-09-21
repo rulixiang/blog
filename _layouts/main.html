@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+<aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="{{site.baseurl}}/"><img
+            src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}"
+            alt="{{site.author}}"></a>
+      </div>
+      <div class="author-name">{{site.author}}</div>
+      <p>{{site.about-author}}</p>
+
+    </div>
+  </header> <!-- End Header -->
+  <section class="contact">
+    <h3 class="contact-title">Content</h3>
+
+    <p>
+      <a href=".."><img src="../assets/img/homepage.svg" align="left" hspace="20" height="24" />
+        <font color="black">Homepage</font>
+      </a> </p>
+
+    <p>
+      <a href="../tags"><img src="../assets/img/list.svg" align="left" hspace="20" height="24" />
+        <font color="black">Tags</font>
+      </a> </p>
+    <p>
+      <a href="https://rulixiang.github.io"><img src="../assets/img/about.svg" align="left" hspace="20" height="24" />
+        <font color="black">About Me</font>
+      </a> </p>
+  </section>
+
+  <footer>
+    <style>
+      a {
+        TEXT-DECORATION: none
+      }
+    </style>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+
+      <p>
+        <a href="https://github.com/rulixiang"><img src="../assets/img/github_logo.svg" align="left" hspace="20"
+            height="24" />
+          <font color="black">Github</font>
+        </a> </p>
+
+      <p>
+        <a href="mailto:rulixiang@outlook.com"><img src="../assets/img/email_logo.svg" align="left" hspace="20"
+            height="24" />
+          <font color="black">Email</font>
+        </a></p>
+
+      <p>
+        <a href="https://scholar.google.com/citations?user=y7wegKQAAAAJ"><img src="../assets/img/gscholar.svg"
+            align="left" hspace="20" height="24" />
+          <font color="black">Google Scholar</font>
+
+        </a></p>
+
+
+      <p>
+        <a href="../pdf/cv.pdf"><img src="../assets/img/cv_logo.svg" align="left" hspace="20" height="24" />
+          <font color="black">Curriculum Vitae</font>
+        </a></p>
+      <hr>
+      <a href="https://info.flagcounter.com/WUoi"><img src="https://s05.flagcounter.com/count2/WUoi/bg_FFFFFF/txt_000000/border_CCCCCC/columns_3/maxflags_18/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+    </section> <!-- End Section Contact -->
+    <hr>
+    <div class="copyright">
+      <p>{{site.time | date: '%Y'}} &copy; {{site.author}}</p>
+    </div>
+
+
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  {{ content }}
+</div>
