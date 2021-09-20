@@ -2,7 +2,7 @@
 
 layout: post
 
-title: 【Python】多线程AttributeError: Can't pickle local object 'boolean_dispatch.<locals>.fn
+title: 【Python】多线程AttributeError: Cant pickle local object 
 
 date:  2021-09-20 10:00
 
