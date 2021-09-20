@@ -1,7 +1,8 @@
+---
 
 layout: post
 
-title: 【Pytorch】多线程AttributeError: Can't pickle local object 'boolean_dispatch.<locals>.fn
+title: 【Python】多线程AttributeError: Can't pickle local object 'boolean_dispatch.<locals>.fn
 
 date:  2021-09-20 10:00
 
@@ -15,7 +16,10 @@ permalink: /2021-09-20-torch-multiprocessing
 
 mathjax: true
 
+---
+
 在使用pytorch的多线程模块时，遇到一个bug
+
 ``` shell
 Traceback (most recent call last):
   File "test_irn_mp.py", line 154, in <module>
@@ -40,6 +44,7 @@ Traceback (most recent call last):
     ForkingPickler(file, protocol).dump(obj)
 AttributeError: Can't pickle local object 'boolean_dispatch.<locals>.fn
 ```
+
 比较令人头疼的是这个error的trace log只有短短的一句 `multiprocessing.spawn(_validate, nprocs=n_gpus, args=(wetr, split_dataset, cfg), join=True)`, 实在是摸不清哪里出现的问题，只好强行google `AttributeError: Can't pickle local object `，最后出来找到一个类似的经验：多进程获取返回值是需要序列化的，多进程的函数中使用其他的类，而这些类可能存在一些不能被序列化的对象。
 
 检查我的代码，发现是在模型初始化时会将pooling函数的句柄作为参数，猜测是这里导致的
